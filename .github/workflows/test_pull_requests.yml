@@ -62,7 +62,7 @@ jobs:
 
     - name: Upgrade basic packages
       run: |
-        python -m pip install --upgrade pip "setuptools<65" wheel
+        python -m pip install --upgrade pip setuptools wheel
 
     # ----------------
     # Set up pip cache
