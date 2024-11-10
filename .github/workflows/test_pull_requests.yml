@@ -60,7 +60,7 @@ jobs:
 
     - name: Upgrade basic packages
       run: |
-        python -m pip install --upgrade pip setuptools wheel
+        python -m pip install --upgrade pip setuptools<65 wheel
 
     # ----------------
     # Set up pip cache
@@ -94,7 +94,7 @@ jobs:
         key: ${{ runner.os }}-pip-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
-          
+
     # ----------------
     # Install dependencies
     # ----------------
