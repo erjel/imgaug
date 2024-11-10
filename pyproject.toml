@@ -1,2 +1,0 @@
-[build-system]
-requires = ["numpy<2", "setuptools"]
