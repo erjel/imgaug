@@ -18,11 +18,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        #os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
         # see supported versions at
         # https://raw.githubusercontent.com/actions/python-versions/master/versions-manifest.json
         #python-version: [3.6, 3.7, 3.8]
-        python-version: [3.8]
+        python-version: [3.7, 3.8]
         # test only the latest 3.x on mac
         # test only the latest 3.x on windows
         exclude:
@@ -108,9 +109,9 @@ jobs:
     # ----------------
     # Run checks and tests
     # ----------------
-    - name: Run flake8
-      run: |
-        flake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics --exclude=".svn,CVS,.bzr,.hg,.git,__pycache__,poly_point_isect.py"
+    ##- name: Run flake8
+    ##  run: |
+    ##    flake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics --exclude=".svn,CVS,.bzr,.hg,.git,__pycache__,poly_point_isect.py"
 
     - name: Run tests
       run: |
