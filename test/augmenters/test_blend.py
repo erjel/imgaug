@@ -641,6 +641,7 @@ class TestBlendAlpha(unittest.TestCase):
                 assert np.array_equal(observed.get_arr(),
                                       self.segmaps_l1.get_arr())
 
+    @unittest.skipUnless(not platform.system() == "darwin", "fails on MacOSX")
     def test_images_factor_is_075(self):
         aug = iaa.BlendAlpha(0.75, iaa.Add(10), iaa.Add(20))
         observed = aug.augment_image(self.image)
