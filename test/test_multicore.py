@@ -853,6 +853,8 @@ def _batch_loader_load_func():
 
 
 # Note that BatchLoader is deprecated
+import platform
+@unittest.skipUnless(not platform.system() == "Darwin", "skip on MacOSX")
 class TestBatchLoader(unittest.TestCase):
     def setUp(self):
         reseed()
