@@ -1,3 +1,5 @@
+name: Provide interactive debug shell
+
 on:
   workflow_dispatch:
     inputs:
