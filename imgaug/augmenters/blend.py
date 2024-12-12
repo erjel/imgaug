@@ -264,6 +264,7 @@ def blend_alpha_(image_fg, image_bg, alpha, eps=1e-2):
 # Added in 0.5.0.
 def _blend_alpha_uint8_single_alpha_(image_fg, image_bg, alpha, inplace):
     # here we are not guarantueed that inputs have ndim=3, can be ndim=2
+    breakpoint()
     result = cv2.addWeighted(
         _normalize_cv2_input_arr_(image_fg),
         alpha,
@@ -272,6 +273,7 @@ def _blend_alpha_uint8_single_alpha_(image_fg, image_bg, alpha, inplace):
         gamma=0.0,
         dst=image_fg if inplace else None
     )
+    breakpoint()
     if result.ndim == 2 and image_fg.ndim == 3:
         return result[:, :, np.newaxis]
     return result
