@@ -642,7 +642,13 @@ class TestBlendAlpha(unittest.TestCase):
                                       self.segmaps_l1.get_arr())
 
 
-    @unittest.skipIf(sys.platform == "darwin", "skip MacOSX for now")
+    # opencv-python (3.4.18.65) function `addWeighted` on macos-14 with
+    # python 3.8.10 shows inconsistent rounding behavior i.e. some values
+    # are 12 others 13
+    @unittest.skipIf(
+        sys.platform == "darwin",
+        "Inconsistent OpenCV rounding on MacOS"
+    )
     def test_images_factor_is_075(self):
         aug = iaa.BlendAlpha(0.75, iaa.Add(10), iaa.Add(20))
         observed = aug.augment_image(self.image)
