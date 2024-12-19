@@ -74,7 +74,7 @@ setup(
     author_email="kontakt@ajung.name",
     url="https://github.com/aleju/imgaug",
     download_url="https://github.com/aleju/imgaug/archive/0.4.0.tar.gz",
-    python_requires='>3.9,<3.13', # imagecorruptions require numba -> numba 0.60 requires python <3.13
+    python_requires='>=3.9,<3.13', # imagecorruptions require numba -> numba 0.60 requires python <3.13
     install_requires=INSTALL_REQUIRES,
     extras_require={
         'dev': DEV_REQUIRES,
