@@ -8,13 +8,12 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.12"
-  jobs:
-    commands:
-      - git clone https://github.com/imaug/imaug-doc.git docs
-      - cd docs
-      - pip install -r requirements.txt
-      - make html
-      - mv _build/html ${READTHEDOCS_OUTPUT}/html/
+  commands:
+    - git clone https://github.com/imaug/imaug-doc.git docs
+    - cd docs
+    - pip install -r requirements.txt
+    - make html
+    - mv _build/html ${READTHEDOCS_OUTPUT}/html/
 
 
 mkdocs:
