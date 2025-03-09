@@ -12,7 +12,9 @@ build:
     - git clone -b fix_doc https://github.com/imaug/imaug-doc.git docs
     - pip install -r docs/requirements.txt
     - make -C docs html
-    - mv docs/_build/html ${READTHEDOCS_OUTPUT}/html
+    - ls docs/
+    - mkdir -p ${READTHEDOCS_OUTPUT}
+    - mv docs/_build/html ${READTHEDOCS_OUTPUT}html
 
 
 mkdocs:
