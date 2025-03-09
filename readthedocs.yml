@@ -9,7 +9,7 @@ build:
   tools:
     python: "3.12"
   commands:
-    - git clone https://github.com/imaug/imaug-doc.git docs
+    - git clone -b fix_doc https://github.com/imaug/imaug-doc.git docs
     - pip install -r docs/requirements.txt
     - make -C docs html
     - mv docs/_build/html ${READTHEDOCS_OUTPUT}/html/
