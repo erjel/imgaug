@@ -175,7 +175,7 @@ def _add_scalar_to_uint8_(image, value):
         return cv2.add(image, value, dst=image, dtype=cv2.CV_8U)
 
     input_shape = image.shape
-    image = image.reshape(-1, 1)
+    image = image.reshape(-1)
     values = np.array(value)
     if not is_channelwise:
         values = np.broadcast_to(values, image.shape)
